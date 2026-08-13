@@ -9,9 +9,9 @@ import { ScrollRevealStory } from "@/components/ScrollRevealStory";
  * Our Heritage. A margin-aligned, rounded Ken Burns photo slideshow on top
  * (the three store frames glide from one to the next — a slow push-in with a
  * cross-fade, never a hard cut), with the Malayalam brand story below it —
- * right-aligned to the margin and led by a premium golden line at the text's
- * left edge that fills with gold in step with the words as the story scrolls
- * into view. "ഇസ്‌ക്കാൻ ജ്വല്ലേഴ്സ്" stays highlighted in a gold-foil brand font.
+ * centre-aligned and led by a premium golden line at the text's left edge that
+ * fills with gold in step with the words as the story scrolls into view.
+ * "ഇസ്‌ക്കാൻ ജ്വല്ലേഴ്സ്" stays highlighted in a gold-foil brand font.
  */
 
 // Eight deliberate lines (word order preserved verbatim); "\n" = hard break.
@@ -54,7 +54,7 @@ export function BrandIntro() {
             <ScrollRevealStory
               text={HERITAGE_STORY}
               progress={scrollYProgress}
-              className="text-right font-malayalam text-[1.05rem] font-medium leading-[1.5] break-words sm:text-[1.3rem] md:text-[1.55rem] md:leading-[1.45]"
+              className="text-center font-malayalam text-[1.4rem] font-medium leading-[1.55] break-words sm:text-[1.7rem] md:text-[2.25rem] md:leading-[1.45]"
             />
           </div>
         </div>
