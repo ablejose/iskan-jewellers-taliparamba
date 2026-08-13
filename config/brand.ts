@@ -8,26 +8,26 @@ export const BRAND: BrandConfig = {
   logo: "/icons/logo.svg",
   favicon: "/favicon.ico",
 
-  heroVideo: "https://res.cloudinary.com/fylz5e3j/video/upload/v1782936959/VN20260702_013328_tbexfn.mp4",
+  heroVideo: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786647159/jewellery/iskan-jewellers-taliparamba/hero.mp4",
 
   storyVideos: [
     {
       quote: "ലാളിത്യത്തിലെ പൂർണ്ണത.",
       description: "അണിയാൻ തീരെ ഭാരമില്ലാത്ത, എന്നാൽ കണ്ണഞ്ചിപ്പിക്കുന്ന ഡിസൈനുകൾ. നിങ്ങളുടെ ഓരോ സാധാരണ ദിവസത്തെയും മനോഹരമാക്കാൻ ഇവ മതിയാകും.",
-      video: "https://res.cloudinary.com/fylz5e3j/video/upload/v1782936959/VN20260702_013328_tbexfn.mp4",
-      segments: { startAt: 0, loopEnd: 8 },
+      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786647159/jewellery/iskan-jewellers-taliparamba/hero.mp4",
+      segments: { startAt: 0, loopEnd: 3.4 },
     },
     {
       quote: "കൈകളിൽ വിരിയുന്ന വിസ്മയം.",
       description: "ഓരോ ആഭരണവും ഓരോ കലാരൂപമാണ്. അതിസൂക്ഷ്മമായി, തികഞ്ഞ പൂർണ്ണതയോടെ രൂപപ്പെടുത്തിയെടുത്തവ. നിങ്ങളുടെ സ്വപ്നങ്ങൾക്ക് സ്വർണ്ണത്തിൽ ജീവൻ വയ്ക്കുമ്പോൾ.",
-      video: "https://res.cloudinary.com/fylz5e3j/video/upload/v1782936959/VN20260702_013328_tbexfn.mp4",
-      segments: { startAt: 32, loopEnd: 40 },
+      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786647159/jewellery/iskan-jewellers-taliparamba/hero.mp4",
+      segments: { startAt: 3.4, loopEnd: 6.8 },
     },
     {
       quote: "തലിപ്പറമ്പിൻ്റെ ഹൃദയത്തിൽ നിന്ന്.",
       description: "ഈ നാടിൻ്റെ പൈതൃകവും പുതുമയും ഒത്തുചേരുന്ന ആഭരണങ്ങൾ. തലമുറകളായി നിങ്ങൾ നൽകുന്ന വിശ്വാസത്തിന് സ്വർണ്ണത്തേക്കാൾ തിളക്കമുണ്ട്.",
-      video: "https://res.cloudinary.com/fylz5e3j/video/upload/v1782936959/VN20260702_013328_tbexfn.mp4",
-      segments: { startAt: 16, loopEnd: 24 },
+      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786647159/jewellery/iskan-jewellers-taliparamba/hero.mp4",
+      segments: { startAt: 6.8, loopEnd: 10.2 },
     },
   ],
 
