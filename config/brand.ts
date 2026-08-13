@@ -14,8 +14,7 @@ export const BRAND: BrandConfig = {
     {
       quote: "ലാളിത്യത്തിലെ പൂർണ്ണത.",
       description: "അണിയാൻ തീരെ ഭാരമില്ലാത്ത, എന്നാൽ കണ്ണഞ്ചിപ്പിക്കുന്ന ഡിസൈനുകൾ. നിങ്ങളുടെ ഓരോ സാധാരണ ദിവസത്തെയും മനോഹരമാക്കാൻ ഇവ മതിയാകും.",
-      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786647159/jewellery/iskan-jewellers-taliparamba/hero.mp4",
-      segments: { startAt: 0, loopEnd: 3.4 },
+      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786657965/jewellery/iskan-jewellers-taliparamba/video1.mp4",
     },
     {
       quote: "കൈകളിൽ വിരിയുന്ന വിസ്മയം.",
@@ -26,16 +25,17 @@ export const BRAND: BrandConfig = {
     {
       quote: "തലിപ്പറമ്പിൻ്റെ ഹൃദയത്തിൽ നിന്ന്.",
       description: "ഈ നാടിൻ്റെ പൈതൃകവും പുതുമയും ഒത്തുചേരുന്ന ആഭരണങ്ങൾ. തലമുറകളായി നിങ്ങൾ നൽകുന്ന വിശ്വാസത്തിന് സ്വർണ്ണത്തേക്കാൾ തിളക്കമുണ്ട്.",
-      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786647159/jewellery/iskan-jewellers-taliparamba/hero.mp4",
-      segments: { startAt: 6.8, loopEnd: 10.2 },
+      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1786657967/jewellery/iskan-jewellers-taliparamba/video3.mp4",
     },
   ],
 
   storeImages: [
-    "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515145/jewellery/iskan-jewellers-taliparamba/store1.webp",
-    "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515148/jewellery/iskan-jewellers-taliparamba/store2.webp",
-    "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515151/jewellery/iskan-jewellers-taliparamba/store3.webp",
-    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786646899/jewellery/iskan-jewellers-taliparamba/store4.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657958/jewellery/iskan-jewellers-taliparamba/store1.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657960/jewellery/iskan-jewellers-taliparamba/store2.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657961/jewellery/iskan-jewellers-taliparamba/store3.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657962/jewellery/iskan-jewellers-taliparamba/store4.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657964/jewellery/iskan-jewellers-taliparamba/store5.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657964/jewellery/iskan-jewellers-taliparamba/store6.webp",
   ],
 
   address: "NH, Taliparamba, Kerala 670141",
