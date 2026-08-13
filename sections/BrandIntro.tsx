@@ -29,7 +29,9 @@ export function BrandIntro() {
   const textRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: textRef,
-    offset: ["start 0.9", "end 0.5"],
+    // Hold the reveal until the first line reaches mid-screen, then gild the
+    // words (and fill the line) as the story scrolls up through the middle.
+    offset: ["start 0.5", "end 0.5"],
   });
 
   return (
