@@ -35,7 +35,7 @@ export const BRAND: BrandConfig = {
     "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515145/jewellery/iskan-jewellers-taliparamba/store1.webp",
     "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515148/jewellery/iskan-jewellers-taliparamba/store2.webp",
     "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515151/jewellery/iskan-jewellers-taliparamba/store3.webp",
-    "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515154/jewellery/iskan-jewellers-taliparamba/store4.webp",
+    "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786646899/jewellery/iskan-jewellers-taliparamba/store4.webp",
   ],
 
   address: "NH, Taliparamba, Kerala 670141",
