@@ -54,7 +54,7 @@ export function BrandIntro() {
             <ScrollRevealStory
               text={HERITAGE_STORY}
               progress={scrollYProgress}
-              className="text-right font-malayalam text-[1.4rem] font-medium leading-[1.55] break-words sm:text-[1.7rem] md:text-[2.25rem] md:leading-[1.45]"
+              className="text-right font-malayalam text-[1.05rem] font-medium leading-[1.5] break-words sm:text-[1.3rem] md:text-[1.55rem] md:leading-[1.45]"
             />
           </div>
         </div>
