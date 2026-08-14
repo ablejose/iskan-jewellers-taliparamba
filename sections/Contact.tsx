@@ -22,8 +22,8 @@ export function Contact() {
     { label: "Phone", value: BRAND.phone, href: telHref(BRAND.phone) },
     {
       label: "WhatsApp",
-      value: BRAND.phone,
-      href: whatsappHref(BRAND.phone, BRAND.whatsappMessage),
+      value: `+${BRAND.whatsapp}`,
+      href: whatsappHref(BRAND.whatsapp, BRAND.whatsappMessage),
       external: true,
     },
     { label: "Email", value: BRAND.email, href: BRAND.email ? `mailto:${BRAND.email}` : undefined },

@@ -84,7 +84,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href={whatsappHref(BRAND.phone, BRAND.whatsappMessage)}
+              href={whatsappHref(BRAND.whatsapp, BRAND.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${BRAND.businessName} on WhatsApp`}

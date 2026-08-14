@@ -15,7 +15,7 @@ export function FloatingWhatsApp() {
 
   return (
     <motion.a
-      href={whatsappHref(BRAND.phone, BRAND.whatsappMessage)}
+      href={whatsappHref(BRAND.whatsapp, BRAND.whatsappMessage)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Message ${BRAND.businessName} on WhatsApp`}
