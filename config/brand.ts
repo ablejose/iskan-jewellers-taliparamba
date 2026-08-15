@@ -49,7 +49,7 @@ export const BRAND: BrandConfig = {
 
   mapsLink: "https://share.google/1uig03hNOhvTT6x39",
 
-  openingHours: "Mon–Sat: 9:30 AM – 8:00 PM · Sunday: 10:00 AM – 7:00 PM",
+  openingHours: "Mon–Sat: 9:30 AM – 7:30 PM",
 
   instagram: "https://www.instagram.com/iskan_jewellers",
   facebook: "https://www.facebook.com/p/Iskan-Jewellers-100090123894295",
