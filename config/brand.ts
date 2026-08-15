@@ -38,12 +38,12 @@ export const BRAND: BrandConfig = {
     "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657964/jewellery/iskan-jewellers-taliparamba/store6.webp",
   ],
 
-  address: "NH, Taliparamba, Kerala 670141",
+  address: "Opposite Bus Stand (Town Square), N.H. Thaliparamba",
   city: "Taliparamba",
   state: "Kerala",
   pincode: "670141",
 
-  phone: "+919961393939",
+  phone: "7558027916, 9400432433",
   whatsapp: "919400432433",
   email: "iskanjewellerstpba@gmail.com",
 

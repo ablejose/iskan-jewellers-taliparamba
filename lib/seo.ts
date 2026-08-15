@@ -33,7 +33,7 @@ export function buildJsonLd(brand: BrandConfig): Record<string, unknown>[] {
     name: brand.businessName,
     image: brand.storeImages,
     url,
-    telephone: brand.phone,
+    telephone: brand.phone.split(",")[0].trim(),
     address: {
       "@type": "PostalAddress",
       streetAddress: brand.address,

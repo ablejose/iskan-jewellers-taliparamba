@@ -10,9 +10,13 @@ export function toDialable(value: string): string {
   return hasPlus ? `+${digits}` : digits;
 }
 
-/** Build a tel: href from a phone number. */
+/**
+ * Build a tel: href from a phone value. When the value holds multiple
+ * comma-separated numbers, the first one is used for dialing.
+ */
 export function telHref(phone: string): string {
-  return `tel:${toDialable(phone)}`;
+  const first = phone.split(",")[0];
+  return `tel:${toDialable(first)}`;
 }
 
 /** Build a wa.me link with an optional prefilled message. */
