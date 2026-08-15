@@ -31,7 +31,7 @@ export function Hero() {
           {secondary ? (
             <p className="mt-3 label-eyebrow">{secondary}</p>
           ) : null}
-          <p className="mt-6 font-sans text-body-lg text-gold">{BRAND.tagline}</p>
+          <p className="mt-6 font-sans text-body text-gold sm:whitespace-nowrap">{BRAND.tagline}</p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Button href="#visit-store">Visit Store</Button>
             <Button href={telHref(BRAND.phone)} variant="secondary">
