@@ -55,19 +55,22 @@ export const BRAND: BrandConfig = {
   facebook: "https://www.facebook.com/p/Iskan-Jewellers-100090123894295",
 
   seo: {
-    title: "Iskan Jewellers | Gold & Diamond Jewellery in Taliparamba",
-    description: "Iskan Jewellers — your destination for gold, diamond and silver jewellery in Taliparamba, Kerala. Serving Taliparamba with timeless craftsmanship.",
+    title: "Iskan Jewellers | Gold, Silver & Diamond Store in Taliparamba",
+    description:
+      "Gold, silver and diamond jewellery store in Taliparamba, Kerala. Visit Iskan Jewellers opposite the Bus Stand (Town Square) for timeless jewellery and trusted craftsmanship.",
     keywords: [
       "Iskan Jewellers",
-      "jewellery Taliparamba",
+      "jewellery in Taliparamba",
+      "gold silver and diamond store Taliparamba",
       "gold jewellery Taliparamba",
-      "diamond jewellery Taliparamba",
       "silver jewellery Taliparamba",
-      "jewellery store Kerala",
+      "diamond jewellery Taliparamba",
+      "jewellery store Taliparamba",
+      "jewellery shop Taliparamba Kannur",
       "Taliparamba gold shop",
     ],
-    canonical: "https://iskan-jewellers-taliparamba.vercel.app",
-    ogImage: "https://res.cloudinary.com/sqsrrir4/image/upload/v1785515145/jewellery/iskan-jewellers-taliparamba/store1.webp",
+    canonical: "https://iskanjewellers.com",
+    ogImage: "/og-image.jpg",
   },
 
   faq: [],
