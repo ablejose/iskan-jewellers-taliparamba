@@ -15,6 +15,7 @@ export function Hero() {
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src={BRAND.heroVideo}
+        poster={BRAND.heroVideo.replace("/upload/", "/upload/so_0/").replace(/\.mp4$/, ".jpg")}
         autoPlay
         muted
         loop

@@ -7,8 +7,9 @@ import { BRAND } from "@/config/brand";
  * Full-screen brand loading overlay.
  *
  * A black screen showing ONLY the business name with three pulsing dots
- * beneath it. It is painted immediately, then fades out once the page has
- * finished loading (with a short minimum so it never merely flashes).
+ * beneath it. It is painted immediately and cleared as soon as the page is
+ * ready — on window load with a short beat, and with a hard time cap so slow
+ * media (e.g. the hero video) can never keep the overlay up.
  * Reduced-motion users get an instant transition via app/globals.css.
  *
  * Reads the business name from config/brand.ts, so it is automatically
@@ -19,26 +20,30 @@ export function LoadingScreen() {
   const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    let removeTimer: ReturnType<typeof setTimeout>;
+    let done = false;
+    const timers: ReturnType<typeof setTimeout>[] = [];
 
     const dismiss = () => {
+      if (done) return;
+      done = true;
       setFading(true);
-      removeTimer = setTimeout(() => setMounted(false), 600);
+      timers.push(setTimeout(() => setMounted(false), 500));
     };
 
-    // Keep the screen up for a brief minimum, then wait for full page load.
-    const minTimer = setTimeout(() => {
-      if (document.readyState === "complete") {
-        dismiss();
-      } else {
-        window.addEventListener("load", dismiss, { once: true });
-      }
-    }, 1000);
+    // Clear shortly after the page finishes loading…
+    const onLoad = () => timers.push(setTimeout(dismiss, 250));
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad, { once: true });
+    }
+
+    // …but never wait on slow media beyond this hard cap.
+    timers.push(setTimeout(dismiss, 1600));
 
     return () => {
-      clearTimeout(minTimer);
-      clearTimeout(removeTimer);
-      window.removeEventListener("load", dismiss);
+      window.removeEventListener("load", onLoad);
+      timers.forEach(clearTimeout);
     };
   }, []);
 

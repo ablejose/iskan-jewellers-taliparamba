@@ -8,7 +8,7 @@ export const BRAND: BrandConfig = {
   logo: "/icons/logo.svg",
   favicon: "/favicon.ico",
 
-  heroVideo: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1787045103/jewellery/iskan-jewellers-taliparamba/hero.mp4",
+  heroVideo: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1787046807/jewellery/iskan-jewellers-taliparamba/hero.mp4",
 
   storyVideos: [
     {
@@ -19,7 +19,7 @@ export const BRAND: BrandConfig = {
     {
       quote: "കൈകളിൽ വിരിയുന്ന വിസ്മയം.",
       description: "ഓരോ ആഭരണവും ഓരോ കലാരൂപമാണ്. അതിസൂക്ഷ്മമായി, തികഞ്ഞ പൂർണ്ണതയോടെ രൂപപ്പെടുത്തിയെടുത്തവ. നിങ്ങളുടെ സ്വപ്നങ്ങൾക്ക് സ്വർണ്ണത്തിൽ ജീവൻ വയ്ക്കുമ്പോൾ.",
-      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1787045103/jewellery/iskan-jewellers-taliparamba/hero.mp4",
+      video: "https://res.cloudinary.com/kmbdkpu1/video/upload/v1787046807/jewellery/iskan-jewellers-taliparamba/hero.mp4",
       segments: { startAt: 0, loopEnd: 4 },
     },
     {
