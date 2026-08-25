@@ -2,16 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useScroll } from "motion/react";
-import { HeritageSlideshow } from "@/components/HeritageSlideshow";
 import { ScrollRevealStory } from "@/components/ScrollRevealStory";
 
 /**
- * Our Heritage. A margin-aligned, rounded Ken Burns photo slideshow on top
- * (the three store frames glide from one to the next — a slow push-in with a
- * cross-fade, never a hard cut), with the Malayalam brand story below it —
- * centre-aligned and led by a premium golden line at the text's left edge that
- * fills with gold in step with the words as the story scrolls into view.
- * "ഇസ്‌ക്കാൻ ജ്വല്ലേഴ്സ്" stays highlighted in a gold-foil brand font.
+ * Our Heritage. The Malayalam brand story — centre-aligned and led by a premium
+ * golden line at the text's left edge that fills with gold in step with the
+ * words as the story scrolls into view. "ഇസ്‌ക്കാൻ ജ്വല്ലേഴ്സ്" stays
+ * highlighted in a gold-foil brand font.
  */
 
 // Eight deliberate lines (word order preserved verbatim); "\n" = hard break.
@@ -37,9 +34,7 @@ export function BrandIntro() {
   return (
     <section id="about" className="py-16 md:py-24">
       <div className="container-lux">
-        <HeritageSlideshow />
-
-        <div className="mt-10 flex gap-4 md:mt-14 md:gap-8">
+        <div className="flex gap-4 md:gap-8">
           {/* Premium golden line at the text's left edge; fills top-to-bottom
               in sync with the words turning gold. */}
           <div
