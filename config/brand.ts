@@ -2,7 +2,7 @@ import type { BrandConfig } from "@/types/brand";
 
 export const BRAND: BrandConfig = {
   businessName: "Iskan Jewellers",
-  tagline: "Finest Jewellery in the Heart of Taliparamba",
+  tagline: "The Biggest Lightweight Jewellery Collection in Taliparamba",
   description: "Iskan Jewellers is Taliparamba's trusted destination for exquisite gold, diamond, and silver jewellery. Serving Taliparamba and the surrounding regions of Kannur with timeless craftsmanship for every celebration.",
 
   logo: "/icons/logo.svg",
