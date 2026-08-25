@@ -18,6 +18,15 @@ export interface VideoSegments {
   loopEnd: number;
 }
 
+export interface Collection {
+  /** Collection display name (e.g. "Teori") */
+  name: string;
+  /** Short descriptor (e.g. "Teenage Collection") — used for alt text/labels */
+  label: string;
+  /** Banner image URL (Cloudinary in production; repo-hosted /collections/*.webp for now) */
+  image: string;
+}
+
 export interface FaqItem {
   question: string;
   answer: string;
@@ -44,6 +53,8 @@ export interface BrandConfig {
   storyVideos: StoryVideo[];
 
   storeImages: string[];
+
+  collections: Collection[];
 
   address: string;
   city: string;

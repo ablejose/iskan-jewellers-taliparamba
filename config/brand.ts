@@ -38,6 +38,32 @@ export const BRAND: BrandConfig = {
     "https://res.cloudinary.com/kmbdkpu1/image/upload/v1786657964/jewellery/iskan-jewellers-taliparamba/store6.webp",
   ],
 
+  // "Our Collections" banners. Repo-hosted webp for now — to serve from
+  // Cloudinary later, upload each file to
+  // jewellery/iskan-jewellers-taliparamba/ and swap in the Cloudinary URL.
+  collections: [
+    {
+      name: "Teori",
+      label: "Teenage Collection",
+      image: "/collections/teori-teenage.webp",
+    },
+    {
+      name: "Mehza",
+      label: "Arabic Collection",
+      image: "/collections/mehza-arabic.webp",
+    },
+    {
+      name: "Zella",
+      label: "Diamond Collection",
+      image: "/collections/zella-diamond.webp",
+    },
+    {
+      name: "Azona",
+      label: "Antique Collection",
+      image: "/collections/azona-antique.webp",
+    },
+  ],
+
   address: "Opposite Bus Stand (Town Square), N.H. Thaliparamba",
   city: "Taliparamba",
   state: "Kerala",
