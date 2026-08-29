@@ -144,7 +144,7 @@ export default function SchemesPage() {
             {GOLDEN_GOAL.steps.map((step) => (
               <div key={step.number} className="rounded-lg border border-slate-200 p-6">
                 <span className="text-sm font-semibold text-[#8a6a1a]">{step.number}</span>
-                <h3 className="mt-2 text-base font-semibold text-slate-900">{step.title}</h3>
+                <h3 className="mt-2 text-base font-semibold text-[#8a6a1a]">{step.title}</h3>
                 <p className="mt-2 font-malayalam text-[0.95rem] leading-relaxed text-slate-600">
                   {step.body}
                 </p>

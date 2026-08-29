@@ -81,7 +81,6 @@ export function SchemesPopup() {
               ✕
             </button>
 
-            <p className="label-eyebrow">{BRAND.businessName}</p>
             <h2
               id="schemes-popup-title"
               className="mt-3 font-display text-display-m text-gold-sweep"
