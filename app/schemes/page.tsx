@@ -117,7 +117,7 @@ export default function SchemesPage() {
               {GOLDEN_GOAL.pills.map((pill) => (
                 <li
                   key={pill}
-                  className="rounded-full border border-slate-300 px-4 py-1.5 text-sm font-medium text-slate-700"
+                  className="rounded-full border border-[#8a6a1a]/30 px-4 py-1.5 text-sm font-medium text-[#8a6a1a]"
                 >
                   {pill}
                 </li>

@@ -8,8 +8,7 @@ import { BRAND } from "@/config/brand";
  * hero. Each collection banner slides in from the RIGHT and out to the LEFT
  * over 0.8s, looping seamlessly. A cloned first slide is appended so the wrap
  * from the last banner back to the first also moves right-to-left, then the
- * track snaps back instantly (no visible jump). A manual arrow advances to the
- * next banner on click.
+ * track snaps back instantly (no visible jump).
  *
  * Fully config-driven: reads BRAND.collections from config/brand.ts.
  */
@@ -87,27 +86,6 @@ export function Collections() {
               </div>
             ))}
           </div>
-
-          {/* Manual next arrow */}
-          <button
-            type="button"
-            onClick={advance}
-            aria-label="Next collection"
-            className="absolute right-4 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-gold/40 bg-background/50 text-gold backdrop-blur-sm transition-colors duration-300 ease-in-out hover:border-gold hover:bg-background/70 md:h-12 md:w-12"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-5 w-5"
-              aria-hidden="true"
-            >
-              <path d="M9 6l6 6-6 6" />
-            </svg>
-          </button>
         </div>
 
         {/* Progress dots */}

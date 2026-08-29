@@ -38,12 +38,12 @@ export interface GoldenGoal {
 }
 
 export const GOLDEN_GOAL: GoldenGoal = {
-  name: "Golden Goal",
+  name: "Golden Goal Scheme",
   subtitle: "Gold Saving Scheme",
-  malayalamTagline: "പണം മാറ്റട്ടെ... പരിശുദ്ധ സ്വർണ്ണമായി...!",
+  malayalamTagline: "പണം മാറട്ടെ... പരിശുദ്ധ സ്വർണ്ണമായി...!",
   intro: "An 11-month Gold Advance Booking Scheme to save towards your next gold purchase.",
 
-  pills: ["11 Months", "Start with only ₹500", "Home Service", "50% off on diamond charges", "16% off on gold charges"],
+  pills: ["11 Months", "Home Service", "Start with only ₹500", "50% off on diamond charges", "16% off on gold charges"],
 
   steps: [
     {

@@ -87,7 +87,9 @@ export function SchemesPopup() {
         </p>
         <p className="mt-4 font-sans text-body text-muted">{GOLDEN_GOAL.intro}</p>
 
-        <ul className="mt-6 flex flex-wrap gap-2">
+        {/* Pills stacked in a single column — each on its own line, sized to
+            content, left-aligned (never side-by-side). */}
+        <ul className="mt-6 flex flex-col items-start gap-2">
           {GOLDEN_GOAL.pills.map((pill) => (
             <li
               key={pill}
