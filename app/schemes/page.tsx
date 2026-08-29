@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-import { Navbar } from "@/sections/Navbar";
-import { Footer } from "@/sections/Footer";
-import { FloatingWhatsApp } from "@/sections/FloatingWhatsApp";
-import { Reveal } from "@/components/Reveal";
-import { SectionHeading } from "@/components/SectionHeading";
-import { Button } from "@/components/Button";
 import { SchemeAccordion } from "@/components/SchemeAccordion";
 import { BRAND } from "@/config/brand";
 import { GOLDEN_GOAL, type SchemeBenefit } from "@/config/goldenGoal";
-import { whatsappHref } from "@/lib/format";
+import { telHref, whatsappHref } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Golden Goal — Gold Saving Scheme",
@@ -20,7 +15,12 @@ export const metadata: Metadata = {
 
 const joinHref = whatsappHref(BRAND.whatsapp, GOLDEN_GOAL.joinMessage);
 
-/** Minimal line-icons for the benefit cards. */
+const btnPrimary =
+  "inline-flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-slate-800";
+const btnSecondary =
+  "inline-flex items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-800 transition-colors hover:border-slate-400 hover:text-slate-900";
+
+/** Minimal line-icons for the benefit rows. */
 function BenefitIcon({ name }: { name: SchemeBenefit["icon"] }) {
   const props = {
     viewBox: "0 0 24 24",
@@ -29,7 +29,7 @@ function BenefitIcon({ name }: { name: SchemeBenefit["icon"] }) {
     strokeWidth: 1.6,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
-    className: "h-6 w-6",
+    className: "h-5 w-5",
     "aria-hidden": true,
   };
   switch (name) {
@@ -70,168 +70,202 @@ function BenefitIcon({ name }: { name: SchemeBenefit["icon"] }) {
 }
 
 export default function SchemesPage() {
+  const year = new Date().getFullYear();
+
   return (
-    <>
-      <Navbar />
+    <div className="min-h-screen bg-white text-slate-700 antialiased">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <Link href="/" className="flex flex-col leading-none">
+            <span className="text-lg font-semibold tracking-wide text-slate-900">
+              {BRAND.businessName}
+            </span>
+            <span className="mt-0.5 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[#8a6a1a]">
+              Golden Goal Scheme
+            </span>
+          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="hidden text-sm text-slate-600 transition-colors hover:text-slate-900 sm:inline">
+              Home
+            </Link>
+            <a href={joinHref} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+              Join Now
+            </a>
+          </div>
+        </div>
+      </header>
+
       <main>
-        {/* 1 — HERO */}
-        <section className="relative flex min-h-[90svh] w-full items-center overflow-hidden pb-20 pt-32">
-          <img
-            src="/collections/jia-gold.webp"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/45" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        {/* Hero */}
+        <section className="border-b border-slate-200">
+          <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a6a1a]">
+              {GOLDEN_GOAL.subtitle}
+            </p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+              {GOLDEN_GOAL.name}
+            </h1>
+            <p className="mt-3 font-malayalam text-lg text-slate-600">
+              {GOLDEN_GOAL.malayalamTagline}
+            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
+              {GOLDEN_GOAL.intro}
+            </p>
 
-          <div className="container-lux relative z-10">
-            <div className="max-w-2xl">
-              <p className="label-eyebrow">{BRAND.businessName}</p>
-              <h1 className="mt-4 font-display text-display-xl text-gold-sweep">
-                {GOLDEN_GOAL.name}
-              </h1>
-              <p className="mt-2 font-sans text-caption uppercase tracking-[0.24em] text-gold/85">
-                {GOLDEN_GOAL.subtitle}
-              </p>
-              <p className="mt-6 font-malayalam text-body-lg text-gold">
-                {GOLDEN_GOAL.malayalamTagline}
-              </p>
-              <p className="mt-5 max-w-xl font-sans text-body-lg text-ivory/85">
-                {GOLDEN_GOAL.intro}
-              </p>
+            <ul className="mt-8 flex flex-wrap gap-2.5">
+              {GOLDEN_GOAL.pills.map((pill) => (
+                <li
+                  key={pill}
+                  className="rounded-full border border-slate-300 px-4 py-1.5 text-sm font-medium text-slate-700"
+                >
+                  {pill}
+                </li>
+              ))}
+            </ul>
 
-              <ul className="mt-8 flex flex-wrap gap-2.5">
-                {GOLDEN_GOAL.pills.map((pill) => (
-                  <li
-                    key={pill}
-                    className="rounded-pill border border-gold/30 bg-background/40 px-4 py-1.5 font-sans text-caption uppercase tracking-[0.12em] text-gold backdrop-blur-sm"
-                  >
-                    {pill}
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a href={joinHref} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+                Join Now
+              </a>
+              <Link href="/#contact" className={btnSecondary}>
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </section>
 
-              <div className="mt-10">
-                <Button href={joinHref} external variant="primary">
-                  Join Now
-                </Button>
+        {/* How it works */}
+        <section className="mx-auto max-w-5xl px-6 py-14 md:py-16">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+            How Golden Goal Works
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {GOLDEN_GOAL.steps.map((step) => (
+              <div key={step.number} className="rounded-lg border border-slate-200 p-6">
+                <span className="text-sm font-semibold text-[#8a6a1a]">{step.number}</span>
+                <h3 className="mt-2 text-base font-semibold text-slate-900">{step.title}</h3>
+                <p className="mt-2 text-[0.95rem] leading-relaxed text-slate-600">{step.body}</p>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* 2 — HOW IT WORKS */}
-        <section className="py-20 md:py-28">
-          <div className="container-lux">
-            <Reveal>
-              <SectionHeading eyebrow="Simple Steps" title="How Golden Goal Works" align="center" />
-            </Reveal>
-            <div className="mt-14 grid gap-6 md:grid-cols-3">
-              {GOLDEN_GOAL.steps.map((step, index) => (
-                <Reveal key={step.number} delay={index * 0.08}>
-                  <div className="h-full rounded-card border border-border bg-white/[0.02] p-8">
-                    <span className="font-display text-display-m text-gold/70">{step.number}</span>
-                    <h3 className="mt-4 font-sans text-caption uppercase tracking-[0.18em] text-gold">
-                      {step.title}
-                    </h3>
-                    <p className="mt-3 font-sans text-body text-muted">{step.body}</p>
+        {/* Key benefits */}
+        <section className="border-y border-slate-200 bg-slate-50">
+          <div className="mx-auto max-w-5xl px-6 py-14 md:py-16">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+              Why Golden Goal?
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {GOLDEN_GOAL.benefits.map((benefit) => (
+                <div
+                  key={benefit.title}
+                  className="flex items-start gap-4 rounded-lg border border-slate-200 bg-white p-6"
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#f4efe1] text-[#8a6a1a]">
+                    <BenefitIcon name={benefit.icon} />
+                  </span>
+                  <div>
+                    <h3 className="text-base font-semibold text-slate-900">{benefit.title}</h3>
+                    <p className="mt-1.5 text-[0.95rem] leading-relaxed text-slate-600">
+                      {benefit.body}
+                    </p>
                   </div>
-                </Reveal>
+                </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* 3 — KEY BENEFITS */}
-        <section className="border-t border-border py-20 md:py-28">
-          <div className="container-lux">
-            <Reveal>
-              <SectionHeading eyebrow="Why Join" title="Why Golden Goal?" align="center" />
-            </Reveal>
-            <div className="mt-14 grid gap-6 sm:grid-cols-2">
-              {GOLDEN_GOAL.benefits.map((benefit, index) => (
-                <Reveal key={benefit.title} delay={(index % 2) * 0.08}>
-                  <div className="flex h-full items-start gap-5 rounded-card border border-border bg-white/[0.02] p-8">
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold">
-                      <BenefitIcon name={benefit.icon} />
-                    </span>
-                    <div>
-                      <h3 className="font-sans text-caption uppercase tracking-[0.16em] text-gold">
-                        {benefit.title}
-                      </h3>
-                      <p className="mt-2 font-sans text-body text-muted">{benefit.body}</p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-8 text-center font-sans text-caption text-muted">
+            <p className="mt-6 text-sm text-slate-500">
               All benefits are subject to the scheme terms &amp; conditions.
             </p>
           </div>
         </section>
 
-        {/* 4 — IMPORTANT TO KNOW */}
-        <section className="py-20 md:py-28">
-          <div className="container-lux max-w-3xl">
-            <Reveal>
-              <SectionHeading eyebrow="Please Note" title="Important to Know" />
-            </Reveal>
-            <ul className="mt-10 flex flex-col gap-5">
-              {GOLDEN_GOAL.importantToKnow.map((point) => (
-                <li key={point} className="flex gap-4">
-                  <span
-                    aria-hidden="true"
-                    className="mt-[0.7rem] h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                  />
-                  <span className="font-sans text-body-lg text-ivory/85">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Important to know */}
+        <section className="mx-auto max-w-3xl px-6 py-14 md:py-16">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+            Important to Know
+          </h2>
+          <ul className="mt-6 space-y-4">
+            {GOLDEN_GOAL.importantToKnow.map((point) => (
+              <li key={point} className="flex gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#9a7b2e]"
+                />
+                <span className="text-base leading-relaxed text-slate-700">{point}</span>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        {/* 5 — TERMS & CONDITIONS */}
-        <section className="border-t border-border py-20 md:py-28">
-          <div className="container-lux max-w-3xl">
-            <Reveal>
-              <SectionHeading eyebrow="The Fine Print" title="Terms & Conditions" />
-            </Reveal>
-            <div className="mt-10">
+        {/* Terms & Conditions */}
+        <section className="border-t border-slate-200 bg-slate-50">
+          <div className="mx-auto max-w-3xl px-6 py-14 md:py-16">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+              Terms &amp; Conditions
+            </h2>
+            <p className="mt-2 text-sm text-slate-500">Tap a section to expand.</p>
+            <div className="mt-8">
               <SchemeAccordion items={GOLDEN_GOAL.terms} />
             </div>
           </div>
         </section>
 
-        {/* 6 — FINAL CTA */}
-        <section className="border-t border-border py-24 md:py-32">
-          <div className="container-lux flex flex-col items-center gap-8 text-center">
-            <Reveal>
-              <h2 className="mx-auto max-w-3xl font-display text-display-l text-ivory">
-                Start your Golden Goal today
-              </h2>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <p className="mx-auto max-w-xl font-sans text-body-lg text-muted">
-                Save monthly. Plan your next jewellery purchase with {BRAND.businessName}.
-              </p>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <Button href={joinHref} external variant="primary">
-                  Join Golden Goal
-                </Button>
-                <Button href="/#contact" variant="secondary">
-                  Contact Us
-                </Button>
-              </div>
-            </Reveal>
+        {/* Final CTA */}
+        <section className="border-t border-slate-200">
+          <div className="mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+              Start your Golden Goal today
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-slate-600">
+              Save monthly. Plan your next jewellery purchase with {BRAND.businessName}.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <a href={joinHref} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+                Join Golden Goal
+              </a>
+              <Link href="/#contact" className={btnSecondary}>
+                Contact Us
+              </Link>
+            </div>
           </div>
         </section>
       </main>
-      <Footer />
-      <FloatingWhatsApp />
-    </>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-10">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p className="text-base font-semibold text-slate-900">{BRAND.businessName}</p>
+              <p className="mt-1 max-w-xs text-sm text-slate-500">{BRAND.address}</p>
+            </div>
+            <div className="text-sm text-slate-600">
+              <p>
+                <a href={telHref(BRAND.phone)} className="transition-colors hover:text-slate-900">
+                  {BRAND.phone}
+                </a>
+              </p>
+              <p className="mt-1">
+                <a
+                  href={joinHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-slate-900"
+                >
+                  WhatsApp
+                </a>
+              </p>
+              <p className="mt-1">{BRAND.openingHours}</p>
+            </div>
+          </div>
+          <p className="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-400">
+            © {year} {BRAND.businessName}. All rights reserved. Benefits are subject to the scheme
+            terms &amp; conditions.
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }

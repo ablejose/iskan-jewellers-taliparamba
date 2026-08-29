@@ -4,8 +4,8 @@ import { useId, useState } from "react";
 import type { SchemeTerm } from "@/config/goldenGoal";
 
 /**
- * Terms & Conditions accordion for the Golden Goal scheme. Left aligned,
- * keyboard accessible, chevron rotates. Items open/close independently so
+ * Terms & Conditions accordion for the Golden Goal scheme (light / professional
+ * theme). Keyboard accessible, chevron rotates, items open independently so
  * members can compare clauses. Data comes from GOLDEN_GOAL.terms.
  */
 export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
@@ -18,7 +18,7 @@ export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
     );
 
   return (
-    <div className="divide-y divide-border border-y border-border">
+    <div className="divide-y divide-slate-200 border-y border-slate-200">
       {items.map((item, index) => {
         const isOpen = open.includes(index);
         const buttonId = `${baseId}-term-${index}`;
@@ -32,17 +32,23 @@ export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => toggle(index)}
-                className="flex w-full items-center justify-between gap-6 py-5 text-left font-sans text-body-lg text-ivory transition-colors duration-300 hover:text-gold"
+                className="flex w-full items-center justify-between gap-6 py-5 text-left text-base font-medium text-slate-900 transition-colors hover:text-[#8a6a1a]"
               >
                 <span>{item.title}</span>
-                <span
-                  aria-hidden="true"
-                  className={`shrink-0 text-gold transition-transform duration-300 ease-lux ${
+                <svg
+                  viewBox="0 0 24 24"
+                  className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-300 ${
                     isOpen ? "rotate-180" : ""
                   }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  ⌄
-                </span>
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
               </button>
             </h3>
             <div
@@ -53,19 +59,19 @@ export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
               className="pb-6"
             >
               {Array.isArray(item.body) ? (
-                <ul className="flex flex-col gap-3 font-sans text-body text-muted">
+                <ul className="flex flex-col gap-2.5 text-[0.95rem] leading-relaxed text-slate-600">
                   {item.body.map((point, i) => (
                     <li key={i} className="flex gap-3">
                       <span
                         aria-hidden="true"
-                        className="mt-[0.6rem] h-1 w-1 shrink-0 rounded-full bg-gold"
+                        className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#9a7b2e]"
                       />
                       <span>{point}</span>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="font-sans text-body text-muted">{item.body}</p>
+                <p className="text-[0.95rem] leading-relaxed text-slate-600">{item.body}</p>
               )}
             </div>
           </div>
