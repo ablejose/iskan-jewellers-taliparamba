@@ -5,8 +5,8 @@ import type { SchemeTerm } from "@/config/goldenGoal";
 
 /**
  * Terms & Conditions accordion for the Golden Goal scheme (light / professional
- * theme). Keyboard accessible, chevron rotates, items open independently so
- * members can compare clauses. Data comes from GOLDEN_GOAL.terms.
+ * theme). English titles, Malayalam body copy. Keyboard accessible, chevron
+ * rotates, items open independently. Data comes from GOLDEN_GOAL.terms.
  */
 export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
   const [open, setOpen] = useState<number[]>([]);
@@ -59,7 +59,7 @@ export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
               className="pb-6"
             >
               {Array.isArray(item.body) ? (
-                <ul className="flex flex-col gap-2.5 text-[0.95rem] leading-relaxed text-slate-600">
+                <ul className="flex flex-col gap-2.5 font-malayalam text-[0.95rem] leading-relaxed text-slate-600">
                   {item.body.map((point, i) => (
                     <li key={i} className="flex gap-3">
                       <span
@@ -71,7 +71,9 @@ export function SchemeAccordion({ items }: { items: SchemeTerm[] }) {
                   ))}
                 </ul>
               ) : (
-                <p className="text-[0.95rem] leading-relaxed text-slate-600">{item.body}</p>
+                <p className="font-malayalam text-[0.95rem] leading-relaxed text-slate-600">
+                  {item.body}
+                </p>
               )}
             </div>
           </div>

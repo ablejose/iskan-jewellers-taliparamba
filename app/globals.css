@@ -136,6 +136,22 @@ body {
   will-change: transform;
 }
 
+/* Gentle, slightly-bouncing nudge for the hero "Schemes" button. */
+@keyframes scheme-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-scheme-nudge {
+  animation: scheme-nudge 1.8s ease-in-out infinite;
+  will-change: transform;
+}
+
 @layer components {
   .container-lux {
     @apply mx-auto w-full max-w-content px-6 md:px-10 lg:px-16;

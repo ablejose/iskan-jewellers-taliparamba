@@ -9,7 +9,7 @@ import { telHref, whatsappHref } from "@/lib/format";
 export const metadata: Metadata = {
   title: "Golden Goal — Gold Saving Scheme",
   description:
-    "Golden Goal is an 11-month Gold Advance Booking Scheme from Iskan Jewellers, Taliparamba. Save from ₹500, build gold at the rate on each payment date, with home service and a 50% diamond making-charge benefit — all subject to the scheme terms.",
+    "Golden Goal is an 11-month Gold Advance Booking Scheme from Iskan Jewellers, Taliparamba. Start with ₹500, build gold at the rate on each payment date, with home service and gold & diamond making-charge benefits — all subject to the scheme terms.",
   alternates: { canonical: "/schemes" },
 };
 
@@ -106,7 +106,7 @@ export default function SchemesPage() {
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
               {GOLDEN_GOAL.name}
             </h1>
-            <p className="mt-3 font-malayalam text-lg text-slate-600">
+            <p className="mt-3 font-malayalam text-lg font-medium text-[#9a7b2e]">
               {GOLDEN_GOAL.malayalamTagline}
             </p>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
@@ -145,7 +145,9 @@ export default function SchemesPage() {
               <div key={step.number} className="rounded-lg border border-slate-200 p-6">
                 <span className="text-sm font-semibold text-[#8a6a1a]">{step.number}</span>
                 <h3 className="mt-2 text-base font-semibold text-slate-900">{step.title}</h3>
-                <p className="mt-2 text-[0.95rem] leading-relaxed text-slate-600">{step.body}</p>
+                <p className="mt-2 font-malayalam text-[0.95rem] leading-relaxed text-slate-600">
+                  {step.body}
+                </p>
               </div>
             ))}
           </div>
@@ -168,16 +170,14 @@ export default function SchemesPage() {
                   </span>
                   <div>
                     <h3 className="text-base font-semibold text-slate-900">{benefit.title}</h3>
-                    <p className="mt-1.5 text-[0.95rem] leading-relaxed text-slate-600">
+                    <p className="mt-1.5 font-malayalam text-[0.95rem] leading-relaxed text-slate-600">
                       {benefit.body}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-sm text-slate-500">
-              All benefits are subject to the scheme terms &amp; conditions.
-            </p>
+            <p className="mt-6 font-malayalam text-sm text-slate-500">{GOLDEN_GOAL.disclaimer}</p>
           </div>
         </section>
 
@@ -193,7 +193,9 @@ export default function SchemesPage() {
                   aria-hidden="true"
                   className="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#9a7b2e]"
                 />
-                <span className="text-base leading-relaxed text-slate-700">{point}</span>
+                <span className="font-malayalam text-base leading-relaxed text-slate-700">
+                  {point}
+                </span>
               </li>
             ))}
           </ul>
@@ -261,8 +263,7 @@ export default function SchemesPage() {
             </div>
           </div>
           <p className="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-400">
-            © {year} {BRAND.businessName}. All rights reserved. Benefits are subject to the scheme
-            terms &amp; conditions.
+            © {year} {BRAND.businessName}. <span className="font-malayalam">{GOLDEN_GOAL.disclaimer}</span>
           </p>
         </div>
       </footer>
