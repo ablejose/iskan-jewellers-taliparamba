@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { BRAND } from "@/config/brand";
 import { GOLDEN_GOAL } from "@/config/goldenGoal";
 
 /**
@@ -67,7 +66,7 @@ export function SchemesPopup() {
           className="fixed inset-0 z-[60] flex items-center justify-center p-4"
         >
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />

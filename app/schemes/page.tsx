@@ -137,7 +137,7 @@ export default function SchemesPage() {
 
         {/* How it works */}
         <section className="mx-auto max-w-5xl px-6 py-14 md:py-16">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-[#8a6a1a] md:text-3xl">
             How Golden Goal Works
           </h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -182,11 +182,11 @@ export default function SchemesPage() {
         </section>
 
         {/* Important to know */}
-        <section className="mx-auto max-w-3xl px-6 py-14 md:py-16">
+        <section className="mx-auto max-w-5xl px-6 py-14 md:py-16">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
             Important to Know
           </h2>
-          <ul className="mt-6 space-y-4">
+          <ul className="mt-6 max-w-3xl space-y-4">
             {GOLDEN_GOAL.importantToKnow.map((point) => (
               <li key={point} className="flex gap-3">
                 <span
@@ -203,12 +203,12 @@ export default function SchemesPage() {
 
         {/* Terms & Conditions */}
         <section className="border-t border-slate-200 bg-slate-50">
-          <div className="mx-auto max-w-3xl px-6 py-14 md:py-16">
+          <div className="mx-auto max-w-5xl px-6 py-14 md:py-16">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
               Terms &amp; Conditions
             </h2>
             <p className="mt-2 text-sm text-slate-500">Tap a section to expand.</p>
-            <div className="mt-8">
+            <div className="mt-8 max-w-3xl">
               <SchemeAccordion items={GOLDEN_GOAL.terms} />
             </div>
           </div>
