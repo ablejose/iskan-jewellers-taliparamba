@@ -77,7 +77,7 @@ export default function SchemesPage() {
         {/* 1 — HERO */}
         <section className="relative flex min-h-[90svh] w-full items-center overflow-hidden pb-20 pt-32">
           <img
-            src="/collections/mehza-arabic.webp"
+            src="/collections/jia-gold.webp"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"

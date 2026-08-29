@@ -43,24 +43,24 @@ export const BRAND: BrandConfig = {
   // jewellery/iskan-jewellers-taliparamba/ and swap in the Cloudinary URL.
   collections: [
     {
-      name: "Teori",
-      label: "Teenage Collection",
-      image: "/collections/teori-teenage.webp",
-    },
-    {
-      name: "Mehza",
-      label: "Arabic Collection",
-      image: "/collections/mehza-arabic.webp",
-    },
-    {
-      name: "Zella",
+      name: "Noor",
       label: "Diamond Collection",
-      image: "/collections/zella-diamond.webp",
+      image: "/collections/noor-diamond.webp",
     },
     {
-      name: "Azona",
-      label: "Antique Collection",
-      image: "/collections/azona-antique.webp",
+      name: "Sara",
+      label: "22K Gold Ornaments",
+      image: "/collections/sara-gold.webp",
+    },
+    {
+      name: "Jia",
+      label: "18K Collection",
+      image: "/collections/jia-gold.webp",
+    },
+    {
+      name: "Liv",
+      label: "Silver Collection",
+      image: "/collections/liv-silver.webp",
     },
   ],
 
