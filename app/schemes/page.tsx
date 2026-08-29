@@ -74,42 +74,42 @@ export default function SchemesPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-700 antialiased">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex flex-col leading-none">
-            <span className="text-lg font-semibold tracking-wide text-slate-900">
-              {BRAND.businessName}
-            </span>
-            <span className="mt-0.5 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-[#8a6a1a]">
-              Golden Goal Scheme
-            </span>
-          </Link>
-          <div className="flex items-center gap-6">
-            <Link href="/" className="hidden text-sm text-slate-600 transition-colors hover:text-slate-900 sm:inline">
-              Home
-            </Link>
-            <a href={joinHref} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
-              Join Now
-            </a>
-          </div>
-        </div>
-      </header>
-
       <main>
-        {/* Hero */}
+        {/* Back to home — replaces the old navbar, aligned top-left */}
+        <div className="mx-auto max-w-5xl px-6 pt-6">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={1.8}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+              aria-hidden="true"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            Back
+          </Link>
+        </div>
+
+        {/* Hero — heading sits at the top now that the navbar is gone */}
         <section className="border-b border-slate-200">
-          <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+          <div className="mx-auto max-w-5xl px-6 pb-14 pt-6 md:pb-20">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8a6a1a]">
               {GOLDEN_GOAL.subtitle}
             </p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
               {GOLDEN_GOAL.name}
             </h1>
             <p className="mt-3 font-malayalam text-lg font-medium text-[#9a7b2e]">
               {GOLDEN_GOAL.malayalamTagline}
             </p>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-700 sm:text-lg">
               {GOLDEN_GOAL.intro}
             </p>
 
@@ -124,18 +124,24 @@ export default function SchemesPage() {
               ))}
             </ul>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href={joinHref} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+            {/* CTAs stack full-width on mobile, sit inline from sm up */}
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={joinHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${btnPrimary} w-full sm:w-auto`}
+              >
                 Join Now
               </a>
-              <Link href="/#contact" className={btnSecondary}>
+              <Link href="/#contact" className={`${btnSecondary} w-full sm:w-auto`}>
                 Contact Us
               </Link>
             </div>
           </div>
         </section>
 
-        {/* How it works */}
+        {/* How it works — cards stack one below another on mobile */}
         <section className="mx-auto max-w-5xl px-6 py-14 md:py-16">
           <h2 className="text-2xl font-semibold tracking-tight text-[#8a6a1a] md:text-3xl">
             How Golden Goal Works
@@ -153,7 +159,7 @@ export default function SchemesPage() {
           </div>
         </section>
 
-        {/* Key benefits */}
+        {/* Key benefits — icon cards stack one below another on mobile */}
         <section className="border-y border-slate-200 bg-slate-50">
           <div className="mx-auto max-w-5xl px-6 py-14 md:py-16">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
@@ -214,7 +220,7 @@ export default function SchemesPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
+        {/* Final CTA — buttons stack full-width on mobile */}
         <section className="border-t border-slate-200">
           <div className="mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
@@ -223,11 +229,16 @@ export default function SchemesPage() {
             <p className="mx-auto mt-3 max-w-xl text-slate-600">
               Save monthly. Plan your next jewellery purchase with {BRAND.businessName}.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a href={joinHref} target="_blank" rel="noopener noreferrer" className={btnPrimary}>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a
+                href={joinHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${btnPrimary} w-full sm:w-auto`}
+              >
                 Join Golden Goal
               </a>
-              <Link href="/#contact" className={btnSecondary}>
+              <Link href="/#contact" className={`${btnSecondary} w-full sm:w-auto`}>
                 Contact Us
               </Link>
             </div>

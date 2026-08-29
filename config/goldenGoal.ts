@@ -43,7 +43,7 @@ export const GOLDEN_GOAL: GoldenGoal = {
   malayalamTagline: "പണം മാറ്റട്ടെ... പരിശുദ്ധ സ്വർണ്ണമായി...!",
   intro: "An 11-month Gold Advance Booking Scheme to save towards your next gold purchase.",
 
-  pills: ["11 Months", "Start with only ₹500", "Home Service", "50% Diamond Discount", "16% Gold Discount"],
+  pills: ["11 Months", "Start with only ₹500", "Home Service", "50% off on diamond charges", "16% off on gold charges"],
 
   steps: [
     {
