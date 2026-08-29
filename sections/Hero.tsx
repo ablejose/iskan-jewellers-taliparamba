@@ -1,11 +1,13 @@
 import { BRAND } from "@/config/brand";
 import { Button } from "@/components/Button";
+import { SchemesPopup } from "@/components/SchemesPopup";
 import { telHref } from "@/lib/format";
 
 /**
  * Full-viewport hero with an autoplay, muted, looping Cloudinary film behind
- * the brand name, tagline and a single CTA (Document 2 §4, Document 5 §7).
- * Content anchored slightly left of center.
+ * the brand name, tagline and CTAs (Document 2 §4, Document 5 §7). The Schemes
+ * button opens a popup for the Golden Goal Gold Saving Scheme; alongside it are
+ * Visit Store and Call Now. Content anchored slightly left of center.
  */
 export function Hero() {
   return (
@@ -29,7 +31,10 @@ export function Hero() {
           <h1 className="font-display text-display-xl text-gold-sweep">{BRAND.businessName}</h1>
           <p className="mt-6 font-sans text-body text-gold sm:whitespace-nowrap">{BRAND.tagline}</p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button href="#visit-store">Visit Store</Button>
+            <SchemesPopup />
+            <Button href="#visit-store" variant="secondary">
+              Visit Store
+            </Button>
             <Button href={telHref(BRAND.phone)} variant="secondary">
               Call Now
             </Button>

@@ -6,10 +6,13 @@ import { useScrolled } from "@/hooks/useScrolled";
 import { splitBrandName } from "@/lib/format";
 import { BRAND } from "@/config/brand";
 
+// Anchors are path-qualified ("/#…") so they resolve from any route, not just
+// the home page. "Schemes" is a real route.
 const LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Visit Store", href: "#visit-store" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Schemes", href: "/schemes" },
+  { label: "Visit Store", href: "/#visit-store" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 /**
@@ -49,7 +52,7 @@ export function Navbar() {
       }`}
     >
       <nav className="container-lux flex items-center justify-between" aria-label="Primary">
-        <Link href="#top" className="flex flex-col leading-none" aria-label={`${BRAND.businessName} home`}>
+        <Link href="/" className="flex flex-col leading-none" aria-label={`${BRAND.businessName} home`}>
           <span className="font-display text-xl tracking-wide text-gold">
             {primary}
           </span>
