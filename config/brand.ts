@@ -70,7 +70,7 @@ export const BRAND: BrandConfig = {
   pincode: "670141",
 
   phone: "7558027916, 9400432433",
-  whatsapp: "919400432433",
+  whatsapp: "917558027916",
   email: "iskanjewellerstpba@gmail.com",
 
   mapsLink: "https://share.google/1uig03hNOhvTT6x39",
