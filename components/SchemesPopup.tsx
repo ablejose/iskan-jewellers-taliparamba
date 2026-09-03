@@ -11,12 +11,14 @@ import { GOLDEN_GOAL } from "@/config/goldenGoal";
  * Saving Scheme, with a single action to view the full scheme page.
  *
  * The popup is rendered through a portal into <body> so its fixed overlay is
- * never trapped by a transformed/animated ancestor (e.g. motion/react). This
- * guarantees it sits above every page element on mobile until it is closed —
- * previously a transformed parent turned the "fixed" overlay into a contained
- * box, letting slivers of the home screen show through on top. Background
- * scroll on <html>/<body> is locked while open. Closes on the overlay, the X
- * button, or Escape.
+ * never trapped by a transformed/animated ancestor (e.g. motion/react).
+ *
+ * Mobile reliability: the CARD has a capped height and scrolls INTERNALLY,
+ * while the close button is pinned to the card (not the scrolling region) with a
+ * 44px tap target and touch-manipulation. Previously the whole overlay scrolled
+ * and the X was absolutely placed on the card, so on a tall popup the X scrolled
+ * off-screen and taps during momentum-scroll missed it. Background scroll on
+ * <html>/<body> is locked while open. Closes on the backdrop, the X, or Escape.
  */
 export function SchemesPopup() {
   const [open, setOpen] = useState(false);
@@ -53,61 +55,79 @@ export function SchemesPopup() {
       role="dialog"
       aria-modal="true"
       aria-labelledby="schemes-popup-title"
-      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto overscroll-contain p-4 py-8 sm:items-center"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
     >
-      {/* Solid full-screen backdrop — covers the entire viewport. */}
+      {/* Solid full-screen backdrop — tap anywhere outside the card to close. */}
       <div
-        className="fixed inset-0 bg-black"
+        className="absolute inset-0 bg-black"
         onClick={() => setOpen(false)}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 my-auto w-full max-w-lg overflow-hidden rounded-lg border border-gold/20 bg-[#0B0B12] p-6 shadow-[0_30px_90px_-25px_rgba(0,0,0,0.85)] sm:p-10">
+      {/* Card: capped height + internal scroll so the pinned close button never
+          scrolls away on small screens. */}
+      <div className="relative z-10 flex max-h-[calc(100dvh-2rem)] w-full max-w-lg flex-col overflow-hidden rounded-lg border border-gold/20 bg-[#0B0B12] shadow-[0_30px_90px_-25px_rgba(0,0,0,0.85)]">
+        {/* Close: pinned to the card (never scrolls), 44px tap target, always
+            legible over the title via a translucent backdrop. */}
         <button
           type="button"
           onClick={() => setOpen(false)}
           aria-label="Close"
-          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted transition-colors duration-300 hover:border-gold hover:text-gold"
+          className="absolute right-3 top-3 z-20 flex h-11 w-11 touch-manipulation items-center justify-center rounded-full border border-border bg-[#0B0B12]/85 text-muted backdrop-blur transition-colors duration-300 hover:border-gold hover:text-gold"
         >
-          ✕
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-5 w-5"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
         </button>
 
-        <h2
-          id="schemes-popup-title"
-          className="pr-10 font-display text-display-m text-gold-sweep"
-        >
-          {GOLDEN_GOAL.name}
-        </h2>
-        <p className="mt-1 font-sans text-caption uppercase tracking-[0.2em] text-gold">
-          {GOLDEN_GOAL.subtitle}
-        </p>
-
-        <p className="mt-4 font-malayalam text-body text-gold">
-          {GOLDEN_GOAL.malayalamTagline}
-        </p>
-        <p className="mt-4 font-sans text-body text-muted">{GOLDEN_GOAL.intro}</p>
-
-        {/* Pills stacked in a single column — each on its own line, sized to
-            content, left-aligned (never side-by-side). */}
-        <ul className="mt-6 flex flex-col items-start gap-2">
-          {GOLDEN_GOAL.pills.map((pill) => (
-            <li
-              key={pill}
-              className="rounded-pill border border-gold/30 px-4 py-1.5 font-sans text-caption uppercase tracking-[0.12em] text-gold"
-            >
-              {pill}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-8">
-          <Link
-            href="/schemes"
-            onClick={() => setOpen(false)}
-            className="btn-primary w-full"
+        {/* Only this region scrolls. */}
+        <div className="min-h-0 overflow-y-auto overscroll-contain p-6 sm:p-10">
+          <h2
+            id="schemes-popup-title"
+            className="pr-12 font-display text-display-m text-gold-sweep"
           >
-            View Full Scheme
-          </Link>
+            {GOLDEN_GOAL.name}
+          </h2>
+          <p className="mt-1 font-sans text-caption uppercase tracking-[0.2em] text-gold">
+            {GOLDEN_GOAL.subtitle}
+          </p>
+
+          <p className="mt-4 font-malayalam text-body text-gold">
+            {GOLDEN_GOAL.malayalamTagline}
+          </p>
+          <p className="mt-4 font-sans text-body text-muted">{GOLDEN_GOAL.intro}</p>
+
+          {/* Pills stacked in a single column — each on its own line, sized to
+              content, left-aligned (never side-by-side). */}
+          <ul className="mt-6 flex flex-col items-start gap-2">
+            {GOLDEN_GOAL.pills.map((pill) => (
+              <li
+                key={pill}
+                className="rounded-pill border border-gold/30 px-4 py-1.5 font-sans text-caption uppercase tracking-[0.12em] text-gold"
+              >
+                {pill}
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8">
+            <Link
+              href="/schemes"
+              onClick={() => setOpen(false)}
+              className="btn-primary w-full touch-manipulation"
+            >
+              View Full Scheme
+            </Link>
+          </div>
         </div>
       </div>
     </div>
