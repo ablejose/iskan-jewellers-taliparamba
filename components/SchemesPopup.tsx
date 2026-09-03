@@ -78,7 +78,7 @@ export function SchemesPopup() {
         >
           {GOLDEN_GOAL.name}
         </h2>
-        <p className="mt-1 font-sans text-caption uppercase tracking-[0.2em] text-gold/80">
+        <p className="mt-1 font-sans text-caption uppercase tracking-[0.2em] text-gold">
           {GOLDEN_GOAL.subtitle}
         </p>
 

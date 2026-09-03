@@ -92,6 +92,12 @@ body {
   padding-bottom: 0.14em;
   margin-bottom: -0.14em;
   margin-top: -0.06em;
+  /* Sharpen + glow so the gradient text never reads as dull on dark backgrounds
+     (including browser dark mode): a soft golden bloom plus a tight dark edge
+     for crispness. drop-shadow works on background-clip:text, where a plain
+     text-shadow would sit hidden behind the transparent fill. */
+  filter: drop-shadow(0 0 6px rgba(242, 210, 139, 0.5))
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
   animation: gold-sweep 6s linear infinite;
 }
 
@@ -99,12 +105,12 @@ body {
 .text-gold-foil {
   background-image: linear-gradient(
     100deg,
-    #a9791f 0%,
-    #f2d28b 20%,
-    #fff6da 42%,
-    #ffe6a3 58%,
-    #f2d28b 78%,
-    #a9791f 100%
+    #c99a2e 0%,
+    #f4d68a 20%,
+    #fff7de 42%,
+    #ffe7a6 58%,
+    #f4d68a 78%,
+    #c99a2e 100%
   );
   background-size: 220% auto;
   -webkit-background-clip: text;
@@ -117,6 +123,10 @@ body {
   line-height: 1.3;
   padding: 0.14em 0.1em;
   margin: -0.14em -0.06em;
+  /* Brighter gold stops (no muddy dark endpoints) plus a golden glow so the
+     brand name "ഇസ്‌ക്കാൻ ജ്വല്ലേഴ്സ്" stays luminous and sharp on dark. */
+  filter: drop-shadow(0 0 6px rgba(242, 210, 139, 0.45))
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
   animation: gold-sweep 5s linear infinite;
 }
 
